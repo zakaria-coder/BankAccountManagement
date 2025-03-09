@@ -27,5 +27,4 @@ public class AccountDto {
                 .user(UserDto.toUser(accountDto.getUser()))
                 .build();
     }
-
 }

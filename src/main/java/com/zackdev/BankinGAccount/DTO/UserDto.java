@@ -2,6 +2,7 @@ package com.zackdev.BankinGAccount.DTO;
 
 
 import com.zackdev.BankinGAccount.Entities.User;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,9 +11,20 @@ import lombok.Setter;
 @Getter@Setter@Builder@AllArgsConstructor
 public class UserDto  {
     private Integer id;
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String firstName;
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String lastName;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    @Email
     private String email;
+
     private String password;
 
     public static UserDto fromUserEntity(User user) {
