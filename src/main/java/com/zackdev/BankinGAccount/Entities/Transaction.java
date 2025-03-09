@@ -4,12 +4,14 @@ import com.zackdev.BankinGAccount.Enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
 @Entity
@@ -21,7 +23,6 @@ public class Transaction  extends  AbstractEntity{
     private TransactionType transaction_type;
     private String receiver_iban;
     private String sender_iban;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

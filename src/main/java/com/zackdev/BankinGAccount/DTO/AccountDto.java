@@ -19,7 +19,7 @@ public class AccountDto {
                 .user(UserDto.fromUserEntity(account.getUser()))
                 .build();
     }
-    public static Account toAccount(AccountDto accountDto) {
+    public static Account toAccountEntity(AccountDto accountDto) {
         return Account
                 .builder()
                 .id(accountDto.getId())
