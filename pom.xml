@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.zackdev</groupId>
-	<artifactId>BankinGAccount</artifactId>
+	<artifactId>BankingAccount</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BankinGAccount</name>
-	<description>project for Spring Boot to uderstand fundamentals Banking ACCOUNT</description>
+	<name>BankingAccount</name>
+	<description>project for Spring Boot to understand fundamentals Banking ACCOUNT</description>
 	<url/>
 	<licenses>
 		<license/>
