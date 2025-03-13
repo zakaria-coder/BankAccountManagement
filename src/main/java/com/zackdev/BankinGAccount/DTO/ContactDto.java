@@ -30,7 +30,7 @@ public class ContactDto {
                 .build();
     }
 
-    public static Contact toContactDto(ContactDto contactDto) {
+    public static Contact toContactEntity(ContactDto contactDto) {
         return Contact.builder()
                 .id(contactDto.getId())
                 .firstName(contactDto.getFirstName())
