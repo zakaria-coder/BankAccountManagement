@@ -36,6 +36,16 @@ public class AccountServiceImpl implements AbstractService<AccountDto> {
         validator.validate(dto);
         Account account = AccountDto.toAccountEntity(dto);
 
+        boolean userHasAlreadyAccount = accountRepository.findByUserId(account.getUser().getId()).isPresent();
+
+        if(userHasAlreadyAccount){
+            throw new OperationNonPermittedException(
+                    "User has already an active account"
+                    ,"Create Account"
+                    ," Account Service"
+                    ,"Account creation"
+            );
+        }
         //To generate random Iban before save the account
         if(account.getId() == null){
             account.setIban(generateRandomIban());

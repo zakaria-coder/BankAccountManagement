@@ -24,6 +24,7 @@ public class User extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private Sexe sexe;
     private String phoneNumber;
+    private boolean active;
     @OneToOne
     private Role role;
     @OneToOne

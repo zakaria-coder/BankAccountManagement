@@ -11,6 +11,4 @@ public class OperationNonPermittedException extends RuntimeException{
     private final String errorCode;
     private final String operationId;
     private final String dependency;
-
-
 }

@@ -1,6 +1,5 @@
 package com.zackdev.BankinGAccount.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zackdev.BankinGAccount.DTO.ContactDto;
 import com.zackdev.BankinGAccount.Entities.Contact;
 import com.zackdev.BankinGAccount.Repositories.ContactRepository;
@@ -45,7 +44,14 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public void delete(Integer t) {
-
         contactRepository.deleteById(t);
+    }
+
+    @Override
+    public List<ContactDto> findAllByUserId(Integer userId) {
+        return contactRepository.finAllByUserId(userId)
+                .stream()
+                .map(ContactDto::fromContactEntity)
+                .collect(Collectors.toList());
     }
 }
